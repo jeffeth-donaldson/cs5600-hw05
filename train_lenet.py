@@ -24,8 +24,9 @@ args = vars(ap.parse_args())
 
 # define training hyperparameters
 INIT_LR = 1e-3
-BATCH_SIZE = 64
-EPOCHS = 20
+# BATCH_SIZE = 64
+BATCH_SIZE = 32
+EPOCHS = 15
 # define the train and val splits
 TRAIN_SPLIT = 0.75
 VAL_SPLIT = 1 - TRAIN_SPLIT
