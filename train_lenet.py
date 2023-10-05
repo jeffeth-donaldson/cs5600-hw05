@@ -24,7 +24,6 @@ args = vars(ap.parse_args())
 
 # define training hyperparameters
 INIT_LR = 1e-3
-# BATCH_SIZE = 64
 BATCH_SIZE = 32
 EPOCHS = 15
 # define the train and val splits
@@ -42,6 +41,10 @@ testData  = KMNIST(root='data', train=False, download=True, transform=ToTensor()
 print('<DBG> generating the train/validation split...')
 numTrainSamples = int(len(trainData) * TRAIN_SPLIT)
 numValSamples   = int(len(trainData) * VAL_SPLIT)
+print(numTrainSamples)
+print(numValSamples)
+print(numTrainSamples+numValSamples)
+print(len(trainData))
 (trainData, valData) = random_split(trainData,
 	                            [numTrainSamples, numValSamples],
 	                            generator=torch.Generator().manual_seed(42))

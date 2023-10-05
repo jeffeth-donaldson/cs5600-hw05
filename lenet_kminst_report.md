@@ -27,38 +27,14 @@ I first went with 15 epochs, but didn't really see any improvement
 ```
               precision    recall  f1-score   support
 
-           o       0.95      0.95      0.95      1000
-          ki       0.98      0.93      0.95      1000
-          su       0.91      0.93      0.92      1000
-         tsu       0.95      0.97      0.96      1000
-          na       0.95      0.93      0.94      1000
-          ha       0.94      0.95      0.95      1000
-          ma       0.95      0.97      0.96      1000
-          ya       0.96      0.97      0.96      1000
-          re       0.95      0.97      0.96      1000
-          wo       0.98      0.94      0.96      1000
-
     accuracy                           0.95     10000
    macro avg       0.95      0.95      0.95     10000
 weighted avg       0.95      0.95      0.95     10000
 ```
-![image](output/15epoch_plot.png "15 epoch accuracy plot")
-
 This took 257.93s to train, so I don't want to go too much higher (I'd like to complete this assignment before it's due) but for the sake of experimentation I'll see what 30 epochs is like.
 
 ```
               precision    recall  f1-score   support
-
-           o       0.96      0.94      0.95      1000
-          ki       0.96      0.94      0.95      1000
-          su       0.95      0.91      0.93      1000
-         tsu       0.95      0.98      0.97      1000
-          na       0.96      0.93      0.94      1000
-          ha       0.95      0.96      0.95      1000
-          ma       0.94      0.97      0.96      1000
-          ya       0.95      0.96      0.96      1000
-          re       0.93      0.97      0.95      1000
-          wo       0.96      0.96      0.96      1000
 
     accuracy                           0.95     10000
    macro avg       0.95      0.95      0.95     10000
@@ -74,17 +50,6 @@ Next up is learning rate. I would like to increase it to hopefully get more work
 ```
               precision    recall  f1-score   support
 
-           o       0.71      0.89      0.79      1000
-          ki       0.78      0.78      0.78      1000
-          su       0.75      0.70      0.73      1000
-         tsu       0.81      0.83      0.82      1000
-          na       0.72      0.70      0.71      1000
-          ha       0.86      0.81      0.83      1000
-          ma       0.70      0.77      0.73      1000
-          ya       0.80      0.69      0.74      1000
-          re       0.73      0.75      0.74      1000
-          wo       0.84      0.74      0.79      1000
-
     accuracy                           0.77     10000
    macro avg       0.77      0.77      0.77     10000
 weighted avg       0.77      0.77      0.77     10000
@@ -96,17 +61,6 @@ Wow that is significantly worse. I notice in the graph a lot of jumping back and
 ```
               precision    recall  f1-score   support
 
-           o       0.93      0.95      0.94      1000
-          ki       0.94      0.95      0.95      1000
-          su       0.94      0.91      0.93      1000
-         tsu       0.96      0.97      0.97      1000
-          na       0.95      0.93      0.94      1000
-          ha       0.97      0.93      0.95      1000
-          ma       0.94      0.95      0.95      1000
-          ya       0.95      0.96      0.96      1000
-          re       0.94      0.97      0.96      1000
-          wo       0.97      0.96      0.96      1000
-
     accuracy                           0.95     10000
    macro avg       0.95      0.95      0.95     10000
 weighted avg       0.95      0.95      0.95     10000
@@ -115,17 +69,6 @@ Well, we are back to where we are before. I'm going to try to increase it just a
 
 ```
               precision    recall  f1-score   support
-
-           o       0.92      0.91      0.92      1000
-          ki       0.95      0.90      0.93      1000
-          su       0.87      0.90      0.89      1000
-         tsu       0.93      0.94      0.94      1000
-          na       0.90      0.89      0.90      1000
-          ha       0.93      0.87      0.90      1000
-          ma       0.88      0.94      0.91      1000
-          ya       0.94      0.92      0.93      1000
-          re       0.91      0.93      0.92      1000
-          wo       0.91      0.93      0.92      1000
 
     accuracy                           0.91     10000
    macro avg       0.91      0.91      0.91     10000
@@ -138,22 +81,10 @@ However trying a learning rate of 1e4 with 30 epochs yields these results:
 ```
               precision    recall  f1-score   support
 
-           o       0.96      0.93      0.94      1000
-          ki       0.97      0.91      0.94      1000
-          su       0.91      0.89      0.90      1000
-         tsu       0.94      0.98      0.96      1000
-          na       0.92      0.94      0.93      1000
-          ha       0.94      0.94      0.94      1000
-          ma       0.91      0.96      0.93      1000
-          ya       0.95      0.95      0.95      1000
-          re       0.95      0.97      0.96      1000
-          wo       0.98      0.95      0.97      1000
-
     accuracy                           0.94     10000
    macro avg       0.94      0.94      0.94     10000
 weighted avg       0.94      0.94      0.94     10000
 ```
-![image](output/1e4_plot.png)
 
 so once again we have yet to make any improvements. It is possible that we are approaching the limits of the numerical (in)stability theorem
 
@@ -163,17 +94,6 @@ Unlike the other parameters so far, I have no idea how batch size will affect th
 
 ```
               precision    recall  f1-score   support
-
-           o       0.94      0.97      0.95      1000
-          ki       0.95      0.95      0.95      1000
-          su       0.96      0.92      0.94      1000
-         tsu       0.97      0.98      0.97      1000
-          na       0.96      0.93      0.94      1000
-          ha       0.95      0.97      0.96      1000
-          ma       0.93      0.97      0.95      1000
-          ya       0.99      0.95      0.97      1000
-          re       0.95      0.97      0.96      1000
-          wo       0.97      0.96      0.96      1000
 
     accuracy                           0.96     10000
    macro avg       0.96      0.96      0.96     10000
@@ -185,3 +105,49 @@ Well to my surprise, this increased the accuracy by one whole percent!
 And with only a train time of 341.43s
 I wonder if decreasing the batch size further will increase our performance. We'll try halving the batch size again.
 
+```
+              precision    recall  f1-score   support
+
+    accuracy                           0.95     10000
+   macro avg       0.95      0.95      0.95     10000
+weighted avg       0.95      0.95      0.95     10000
+```
+Alas, we are back to the accursed 0.95 accuracy. Intuitively I'm not sure exactly what effect the batch size would have on accuracy, so I can't really explain either of these numbers. Perhaps the previous 0.96 was just a fluke due to the random starting values of the weights, or maybe there really was some benefit to the batch size being 32. Either way, going forward, I'm keeping batch size as 32 instead of 64.
+## Train/Test Split
+
+Next is the train/test split. I have a few ideas as to how this will affect the accuracy, but because I'm not sure if I'm right I will not tell you what I am thinking and instead just try increasing the training data to 85% of the total.
+
+```
+              precision    recall  f1-score   support
+
+    accuracy                           0.96     10000
+   macro avg       0.96      0.96      0.96     10000
+weighted avg       0.96      0.96      0.96     10000
+```
+Well, nothing too exciting here. Let's see what happens when we do something drastic like set the training set size to 0.5.
+
+```
+              precision    recall  f1-score   support
+
+    accuracy                           0.94     10000
+   macro avg       0.94      0.94      0.94     10000
+weighted avg       0.94      0.94      0.94     10000
+```
+This is about what I was expecting. In fact 0.94 is pretty good for that little data. I think we have it about as good as its going to get, but just for fun I want to set the training set to something huge like 0.95
+```
+              precision    recall  f1-score   support
+
+    accuracy                           0.95     10000
+   macro avg       0.95      0.95      0.95     10000
+weighted avg       0.95      0.95      0.95     10000
+```
+Here we see that we overfitted a bit. We are doing better than 50/50 split, but not much better. I think it just goes to show you that the people who decided what values are good for train/test split aren't called experts for nothing. I'm going to call it here and say that our best model was the one with these parameters:
+```python
+# define training hyperparameters
+INIT_LR = 1e-3
+BATCH_SIZE = 32
+EPOCHS = 15
+# define the train and val splits
+TRAIN_SPLIT = 0.75
+VAL_SPLIT = 1 - TRAIN_SPLIT
+```
